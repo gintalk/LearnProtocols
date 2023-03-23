@@ -1,0 +1,1 @@
+thrift-0.18.1.exe -r --gen java -out ../main/java service.thrift

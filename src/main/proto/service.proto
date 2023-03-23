@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc";
+
+service GRPCService {
+  rpc get(GetRequest) returns (GetResponse);
+  rpc serverStreamGet(GetRequest) returns (stream GetResponse);
+  rpc clientStreamGet(stream GetRequest) returns (GetResponse);
+  rpc biStreamGet(stream GetRequest) returns (stream GetResponse);
+}
+
+message GetRequest {
+  optional string param = 1;
+}
+
+message GetResponse {
+  optional string ret = 1;
+}
